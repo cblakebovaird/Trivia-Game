@@ -44,10 +44,10 @@ function decrement() {
     number--;
 
     //  Display Number
-    $("#show-number").html("<h2> timer: " + number + "</h2>");
+    $("#show-number").html("<h2> Time Remaining: " + number + "</h2>");
 
     if (number > 5) {
-        $("#show-number").html("<h2> timer: " + "0" + "</h2>");
+        $("#show-number").html("<h2> Time Remaining: " + "0" + "</h2>");
     }
     else if (number === 1) {
         number += 5
@@ -56,7 +56,7 @@ function decrement() {
 
         clearInterval(intervalId);
         stop();
-        $("#show-number").html("<h2>timer: " + "" + "</h2>");
+        $("#show-number").html("<h2>Time Remaining: " + "" + "</h2>");
     }
 }
 
@@ -201,21 +201,21 @@ function nextQuestion() {
 
             incorrect++;
             correctState = 0;
-            $("#questionHolder").html("incorrect! the answer was " + answerVar + "<br>" + "correct: " + correct + "<br>" + "incorrect: " + incorrect + "<br>" + "unanswered: " + unanswered);
+            $("#questionHolder").html("Incorrect! The Answer Was " + answerVar + "<br>" + "Correct: " + correct + "<br>" + "Incorrect: " + incorrect + "<br>" + "Unanswered: " + unanswered);
 
         }
         else if (radioValue === "1") {
 
             correct++;
             correctState = 1;
-            $("#questionHolder").html("correct! the answer was " + answerVar + "<br>" + "correct: " + correct + "<br>" + "incorrect: " + incorrect + "<br>" + "unanswered: " + unanswered);
+            $("#questionHolder").html("Correct! The Answer Was " + answerVar + "<br>" + "Correct: " + correct + "<br>" + "Incorrect: " + incorrect + "<br>" + "Unanswered: " + unanswered);
         }
     }
     else {
         incorrect++
         unanswered++
         correctState = 0;
-        $("#questionHolder").html("incorrect! the answer was " + answerVar + "<br>" + "correct: " + correct + "<br>" + "incorrect: " + incorrect + "<br>" + "unanswered: " + unanswered);
+        $("#questionHolder").html("Incorrect! The Answer Was " + answerVar + "<br>" + "Correct: " + correct + "<br>" + "Incorrect: " + incorrect + "<br>" + "Unanswered: " + unanswered);
     }
 
     run();
@@ -223,14 +223,14 @@ function nextQuestion() {
     //  Increase the count
     count++;
 
-    $("#show-number").html("<h2> timer: " + "0" + "</h2>");
+    $("#show-number").html("<h2></h2>");
 
     // time the question is displayed
     setTimeout(displayQuestion, 1000);
 
     if (count === questions.length) {
 
-        $("#questionHolder").html("FINAL SCORE" + "<br>" + "correct: " + correct + "<br>" + "incorrect: " + incorrect + "<br>" + "unanswered: " + unanswered);
+        $("#questionHolder").html("FINAL SCORE" + "<br>" + "Correct: " + correct + "<br>" + "Incorrect: " + incorrect + "<br>" + "Unanswered: " + unanswered);
 
         stopGame();
 
