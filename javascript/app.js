@@ -4,7 +4,9 @@ var questions = ["Question 1: How many Pokemon are in the first generation?",
 "Question 3: Which Pokemon is considered to be the main Pokemon of the series?", 
 "Question 4: What is that Pokemon's type?", 
 "Question 5: What is the name of the original 'bad guys' in the series?", 
-"Question 6: Who is the first legendary Pokemon to make an appearance in the TV Series?"];
+"Question 6: Who is the first legendary Pokemon to make an appearance in the TV Series?",
+"Question 7: What type of Pokemon does Ash's friend Misty specialize in?",
+"Question 8: What Pokemon is known for putting everyone to sleep?"];
 
 // holding the setInterval
 var showQuestion;
@@ -108,13 +110,33 @@ function displayQuestion() {
     run();
 
     // display questions
-    if (count === 5) {
+    if (count === 7) {
+
+        $("#questionHolder").append(" <form> " +
+            "<label>" + "<input type='radio' id='q1_radio_1' name='radiobtn' value = '2' > Hypno" + "</label>" + "<br>" +
+            "<label>" + "<input type='radio' id='q1_radio_1' name='radiobtn' value = '2' > Drowzee" + "</label>" + "<br>" +
+            "<label>" + "<input type='radio' id='q1_radio_2' name='radiobtn' value = '1' > Jigglypuff" + "</label>" + "<br>" +
+            "<label>" + "<input type='radio' id='q1_radio_3' name='radiobtn' value = '2' > Clefairy" + "</label>" + "<br>" + " </form> ");
+    }
+    else if (count === 6) {
+
+        $("#questionHolder").append(" <form> " +
+            "<label>" + "<input type='radio' id='q1_radio_1' name='radiobtn' value = '2' > Dark" + "</label>" + "<br>" +
+            "<label>" + "<input type='radio' id='q1_radio_1' name='radiobtn' value = '1' > Water" + "</label>" + "<br>" +
+            "<label>" + "<input type='radio' id='q1_radio_2' name='radiobtn' value = '2' > Psychic" + "</label>" + "<br>" +
+            "<label>" + "<input type='radio' id='q1_radio_3' name='radiobtn' value = '2' > Fairy" + "</label>" + "<br>" + " </form> ");
+
+
+    }
+    else if (count === 5) {
 
         $("#questionHolder").append(" <form> " +
             "<label>" + "<input type='radio' id='q1_radio_1' name='radiobtn' value = '1' > Ho-oh" + "</label>" + "<br>" +
             "<label>" + "<input type='radio' id='q1_radio_1' name='radiobtn' value = '2' > Lugia" + "</label>" + "<br>" +
             "<label>" + "<input type='radio' id='q1_radio_2' name='radiobtn' value = '2' > Mewtwo" + "</label>" + "<br>" +
             "<label>" + "<input type='radio' id='q1_radio_3' name='radiobtn' value = '2' > Mew" + "</label>" + "<br>" + " </form> ");
+
+
     }
     else if (count === 4) {
 
@@ -166,7 +188,7 @@ function displayQuestion() {
 function nextQuestion() {
 
     // these are statements that log correct / incorrect answers
-    var answerArr = ["151", "Ash", "Pikachu", "Electric", "Team Rocket", "Ho-oh"];
+    var answerArr = ["151", "Ash", "Pikachu", "Electric", "Team Rocket", "Ho-oh", "Water", "Jigglypuff"];
     var answerVar = answerArr[count];
 
     var radioValue = $("input[name='radiobtn']:checked").val();
