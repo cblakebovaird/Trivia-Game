@@ -188,8 +188,8 @@ function displayQuestion() {
 function nextQuestion() {
 
     // these are statements that log correct / incorrect answers
-    var answerArr = ["151", "Ash", "Pikachu", "Electric", "Team Rocket", "Ho-oh", "Water", "Jigglypuff"];
-    var answerVar = answerArr[count];
+    var correctAnswers = ["151", "Ash", "Pikachu", "Electric", "Team Rocket", "Ho-oh", "Water", "Jigglypuff"];
+    var answerVar = correctAnswers[count];
 
     var radioValue = $("input[name='radiobtn']:checked").val();
 
@@ -226,7 +226,7 @@ function nextQuestion() {
     $("#show-number").html("<h2></h2>");
 
     // time the question is displayed
-    setTimeout(displayQuestion, 1000);
+    setTimeout(displayQuestion, 6000);
 
     if (count === questions.length) {
 
