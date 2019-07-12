@@ -226,7 +226,7 @@ function nextQuestion() {
     $("#show-number").html("<h2></h2>");
 
     // time the question is displayed
-    setTimeout(displayQuestion, 6000);
+    setTimeout(displayQuestion, 1000);
 
     if (count === questions.length) {
 
